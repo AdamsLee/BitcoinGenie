@@ -17,14 +17,14 @@ namespace BitcoinGenie
 			{
 				WriteLine("Sure, I'll help you, what is the bitcoin address?");
 				var addressString = ReadLine();
-				var address = BitcoinAddress.Create(addressString, Network.Main);
+				var address = BitcoinAddress.Create(addressString, Network.TestNet);
 				WriteLine(address.ScriptPubKey);
 			}
 			if(command == "I want to create a transaction")
 			{
 				WriteLine("Great, here is a template for your transaction:");
 				WriteLine();
-				var tx = new Transaction();
+				var tx = Transaction.Create(Network.TestNet);
 				WriteLine(tx);
 				WriteLine();
 
